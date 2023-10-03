@@ -58,6 +58,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -70,9 +71,9 @@
                   <mainClass>foo.bar.Main</mainClass>
                 </manifest>
               </archive>
-              <descriptorRefs>
-                <descriptorRef>jar-with-dependencies</descriptorRef>
-              </descriptorRefs>
+              <descriptors>
+                <descriptor>${project.basedir}/src/assembly/merge.xml</descriptor>
+              </descriptors>
             </configuration>
           </execution>
         </executions>
